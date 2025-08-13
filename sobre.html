@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Projeto Bio-Guard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            font-family: 'Exo 2', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            color: #00ffff;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+        h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            color: #00ffff;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .footer-info {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #e0e6ff;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #00ffff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .back-link:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sobre o Projeto Bio-Guard</h1>
+        
+        <p>
+            O Bio-Guard é um sistema de monitoramento inteligente desenvolvido para análise de qualidade de água. 
+            Utiliza um sensor RGB TCS34725 para identificar a intensidade da cor vermelha, permitindo detectar 
+            possíveis níveis de contaminação. Quanto mais escura a cor, maior o grau de poluição. Além disso, 
+            o sistema conta com um sensor LDR para medir a intensidade da luz, auxiliando na análise de turbidez da água.
+        </p>
+
+        <p>
+            O sistema é baseado em um microcontrolador ESP32, que coleta dados dos sensores e envia as informações 
+            via Bluetooth Low Energy (BLE) para este site, onde são processadas e exibidas em tempo real. 
+            A visualização por termômetro torna a interpretação dos dados intuitiva e rápida.
+        </p>
+
+        <p>
+            O projeto foi construído utilizando sensores de precisão, programação na Arduino IDE e integração 
+            com a API Web Bluetooth para exibição em navegadores modernos. A carcaça e suporte dos sensores 
+            foram modelados e impressos em 3D.
+        </p>
+
+        <div class="footer-info">
+            2° ano AGR - Escola Estadual João XXIII - Barra de São Francisco - ES - 2025
+        </div>
+
+        <p style="text-align: center;">
+            <a href="index.html" class="back-link">Voltar para a Página Principal</a>
+        </p>
+    </div>
+</body>
+</html>
+

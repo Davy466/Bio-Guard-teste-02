@@ -1,0 +1,321 @@
+/* ===== IMPORTAÇÃO DE FONTES MODERNAS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap');
+
+/* ===== RESET E CONFIGURAÇÕES GLOBAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ===== ANIMAÇÃO DE FUNDO CIENTÍFICO ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
+    z-index: -1;
+    animation: pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ===== HEADER/TOPO ===== */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: slideInDown 1s ease-out;
+}
+
+.title {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    background: linear-gradient(45deg, #00ffff, #0080ff, #8000ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: 300;
+    color: #e0e6ff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== ÁREA PRINCIPAL DOS DADOS ===== */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* ===== CARD DO TERMÔMETRO ===== */
+.thermometer-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: slideInLeft 1s ease-out;
+}
+
+.thermometer-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #00ffff;
+}
+
+/* ===== TERMÔMETRO VERTICAL ===== */
+.thermometer {
+    width: 60px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    margin: 0 auto 20px;
+    position: relative;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.thermometer-fill {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0 0 27px 27px;
+    transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1), background 0.8s ease;
+    height: 33%; /* Valor inicial */
+}
+
+/* ===== CORES DO TERMÔMETRO ===== */
+.level-baixa { background: linear-gradient(0deg, #ffeb3b, #ffc107); }
+.level-media { background: linear-gradient(0deg, #ff9800, #ff5722); }
+.level-alta { background: linear-gradient(0deg, #f44336, #d32f2f); }
+
+/* ===== ESCALAS DO TERMÔMETRO ===== */
+.thermometer-scale {
+    position: absolute;
+    right: -40px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #e0e6ff;
+}
+
+.scale-label {
+    display: flex;
+    align-items: center;
+}
+
+.scale-label::before {
+    content: '';
+    width: 10px;
+    height: 1px;
+    background: #e0e6ff;
+    margin-right: 5px;
+}
+
+/* ===== DADOS DO SENSOR ===== */
+.sensor-data {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+/* ===== CARD DO LDR ===== */
+.ldr-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: slideInRight 1s ease-out;
+}
+
+.ldr-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #00ffff;
+}
+
+.ldr-display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffeb3b;
+    text-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
+    margin-bottom: 10px;
+}
+
+.ldr-label {
+    font-size: 1.1rem;
+    color: #e0e6ff;
+}
+
+/* ===== ÁREA DE CONTROLES ===== */
+.controls {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.connect-btn {
+    background: linear-gradient(45deg, #00c851, #007e33);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 200, 81, 0.3);
+    margin-bottom: 20px;
+}
+
+.connect-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 200, 81, 0.4);
+}
+
+.connect-btn:disabled {
+    background: linear-gradient(45deg, #666, #444);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.status {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.status.connected {
+    background: rgba(0, 200, 81, 0.2);
+    border: 1px solid rgba(0, 200, 81, 0.5);
+    color: #00ff88;
+}
+
+.status.disconnected {
+    background: rgba(255, 68, 68, 0.2);
+    border: 1px solid rgba(255, 68, 68, 0.5);
+    color: #ff8888;
+}
+
+/* ===== NAVEGAÇÃO ===== */
+.navigation {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #00ffff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-link:hover {
+    background: rgba(0, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
+}
+
+/* ===== ANIMAÇÕES ===== */
+@keyframes slideInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .thermometer-card,
+    .ldr-card {
+        min-width: 280px;
+        max-width: 100%;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+}
+
+/* ===== EFEITO DE CARREGAMENTO ===== */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+

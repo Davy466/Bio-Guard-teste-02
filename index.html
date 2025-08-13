@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Guard - Monitoramento de Qualidade da Água</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ===== CABEÇALHO ===== -->
+        <header class="header">
+            <h1 class="title">Bio-Guard</h1>
+            <p class="subtitle">Projeto da Feira de Ciências 2025</p>
+        </header>
+
+        <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+        <main class="main-content">
+            <!-- Card do Termômetro (Sensor RGB) -->
+            <div class="thermometer-card">
+                <h2 class="thermometer-title">Nível de Contaminação</h2>
+                
+                <!-- Termômetro Visual -->
+                <div class="thermometer">
+                    <div class="thermometer-fill level-baixa" id="thermometerFill"></div>
+                    <div class="thermometer-scale">
+                        <span class="scale-label">Alta</span>
+                        <span class="scale-label">Média</span>
+                        <span class="scale-label">Baixa</span>
+                    </div>
+                </div>
+
+                <!-- Dados do Sensor RGB -->
+                <div class="sensor-data" id="rgbData">
+                    <div>Cor: Aguardando dados...</div>
+                    <div>Contaminação: --</div>
+                </div>
+            </div>
+
+            <!-- Card do Sensor LDR -->
+            <div class="ldr-card">
+                <h2 class="ldr-title">Sensor de Luminosidade</h2>
+                <div class="ldr-display" id="ldrValue">--%</div>
+                <div class="ldr-label">Intensidade de Luz</div>
+            </div>
+        </main>
+
+        <!-- ===== CONTROLES ===== -->
+        <div class="controls">
+            <button class="connect-btn" id="connectBtn" onclick="connectToBioGuard()">
+                Conectar ao Bio-Guard via Bluetooth
+            </button>
+            <div class="status disconnected" id="status">
+                Desconectado - Clique para conectar
+            </div>
+        </div>
+
+        <!-- ===== NAVEGAÇÃO ===== -->
+        <nav class="navigation">
+            <a href="sobre.html" class="nav-link">Sobre o Projeto</a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
